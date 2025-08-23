@@ -1,0 +1,9 @@
+sentence-transformers
+faiss-cpu
+python-dotenv
+click
+tqdm
+transformers
+torch
+openai>=1.0.0
+google-generativeai

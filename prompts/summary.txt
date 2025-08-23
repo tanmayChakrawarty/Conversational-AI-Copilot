@@ -1,0 +1,16 @@
+You are an expert sales analyst. Your task is to provide a concise and structured summary of the following sales call transcript.
+
+Focus on extracting key business insights. The summary should be easy to read and include the following sections:
+
+1.  **Main Purpose:** A one-sentence summary of the call's objective.
+2.  **Key Discussion Points:** Use bullet points to list the most important topics discussed (e.g., pricing, legal redlines, security concerns).
+3.  **Customer Sentiment:** Briefly describe the customer's overall tone and any specific objections raised.
+4.  **Action Items / Next Steps:** List all follow-up actions agreed upon and who is responsible.
+
+Here is the full transcript:
+---------------------
+TRANSCRIPT:
+{transcript}
+---------------------
+
+Provide the structured summary now.
