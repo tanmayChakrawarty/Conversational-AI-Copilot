@@ -149,7 +149,7 @@ Once in the shell, you can use the following commands:
 * **`summarise <call_id>`**: Generate a full, structured summary of a specific call.
 
   ```
-  (copilot)> summarise 4_negotiation_call.txt
+  (copilot)> summarise call.txt
   
   ```
 
