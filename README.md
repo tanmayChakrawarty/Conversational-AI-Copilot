@@ -29,6 +29,7 @@ This project is built with a modular and scalable architecture, following SOLID 
 ## Setup and Installation
 
 Follow these steps to set up and run the project locally.
+[Github](https://github.com/tanmayChakrawarty/Conversational-AI-Copilot)
 
 ### 1. Prerequisites
 
@@ -39,7 +40,7 @@ Follow these steps to set up and run the project locally.
 ### 2. Clone the Repository
 
 ```
-git clone <your-repository-url>
+git clone https://github.com/tanmayChakrawarty/Conversational-AI-Copilot
 cd sales-copilot
 
 ```
