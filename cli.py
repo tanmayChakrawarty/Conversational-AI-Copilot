@@ -1,8 +1,6 @@
 import click
 import os
 from tqdm import tqdm
-
-# Import all the core components we have built
 from src.retrieval.retrieval_pipeline import RetrievalPipeline
 from src.ingestion.ingestion_pipeline import IngestionPipeline
 from src.llm.llm_handler import LLMHandler
@@ -15,17 +13,18 @@ class SalesCopilot:
     """A controller class to orchestrate the chatbot's functionalities."""
 
     def __init__(self):
-        """Initializes all necessary components for the chatbot."""
         click.echo("Initializing Sales Copilot... (this may take a moment)")
+
         vector_store = VectorStore(
             index_path=config.VECTOR_STORE_INDEX_PATH,
-            metadata_path=config.VECTOR_STORE_METADATA_PATH
+            metadata_path=config.VECTOR_STORE_METADATA_PATH,
+            embedding_dim=config.EMBEDDING_DIMENSION
         )
         self.ingestor = IngestionPipeline(vector_store)
         self.retriever = RetrievalPipeline(vector_store)
         self.llm = LLMHandler()
         self.prompt_builder = PromptBuilder()
-        click.echo("Initialization complete. Ready for commands.")
+        click.echo("Initialization complete. Welcome to Sales Copilot!")
 
     def ingest(self, path: str):
         """Handles the ingestion of files or directories."""
@@ -165,8 +164,14 @@ def ingest(path):
 @cli.command(name="list")
 def list_calls():
     """List all ingested call IDs."""
-    retriever = RetrievalPipeline()
-    call_ids = retriever.store.get_all_call_ids()
+    # PROVIDE the embedding_dim here as well
+    store = VectorStore(
+        index_path=config.VECTOR_STORE_INDEX_PATH,
+        metadata_path=config.VECTOR_STORE_METADATA_PATH,
+        embedding_dim=config.EMBEDDING_DIMENSION
+    )
+    # This command logic can be simplified as it doesn't need a full pipeline
+    call_ids = store.get_all_call_ids()
     if not call_ids:
         click.echo("No calls have been ingested yet.")
         return

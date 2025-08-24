@@ -5,7 +5,7 @@ load_dotenv()
 
 # --- Embedding Model Configuration ---
 EMBEDDING_MODEL_NAME = os.getenv("EMBEDDING_MODEL_NAME", "all-MiniLM-L6-v2")
-EMBEDDING_DIMENSION = os.getenv("EMBEDDING_DIMENSION", 384)
+EMBEDDING_DIMENSION = 384
 
 # --- Model Configuration ---
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "gemini") # Default to gemini

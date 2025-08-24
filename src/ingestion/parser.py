@@ -60,8 +60,6 @@ def parse_transcript(file_path: str, call_id: str) -> Generator[Dict, None, None
                 # continuation of the current speaker's message (e.g., bullet points).
                 current_speech.append(line.strip())  # Strip leading space for continuation lines
 
-            # If a line is blank, we ignore it, treating it as a visual separator.
-
     # After the loop finishes, we need to yield the very last speech segment captured.
     if current_speaker and current_speech:
         yield {

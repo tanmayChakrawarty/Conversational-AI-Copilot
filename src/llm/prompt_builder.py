@@ -11,8 +11,6 @@ class PromptBuilder:
         except FileNotFoundError as e:
             raise FileNotFoundError(f"A prompt template was not found: {e}.")
 
-    # --- build_qa_prompt and build_focused_summary_prompt remain the same ---
-
     def build_qa_prompt(self, query: str, context_chunks: List[Dict]) -> str:
         context_str = ""
         for i, chunk in enumerate(context_chunks):
